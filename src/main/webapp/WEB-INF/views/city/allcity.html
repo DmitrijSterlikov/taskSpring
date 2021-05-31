@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AllTemperature</title>
+</head>
+<body>
+<div th:each="temp : ${temp}">
+    <div><p th:text="${temp.getNameCity}">VALUE</p>
+        <hr/>
+    </div>
+    <ul>
+        <div th:each="temper : ${temp.getList()}">
+            <p>Temperature</p>
+            <p th:text="${temper.getTemperature}">VALUE</p>
+            <p>Date</p>
+            <p th:text="${temper.getDate}">VALUE</p>
+        </div>
+    </ul>
+
+</div>
+<br/>
+<a href="/city">back</a>
+</body>
+</html>

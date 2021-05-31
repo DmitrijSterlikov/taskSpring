@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+
+<form th:action="@{/city/show}" method="get" th:object="${city}">
+    <select id="task" name="task">
+        <option value="0">Select city</option>
+        <option th:each="test : ${city}"
+                th:value="${test.getIdCity()}"
+                th:text="${test.getIdCity()}+' : '+${test.getNameCity()}">
+        </option>
+    </select>
+    <button type="submit">Enter</button>
+
+</form>
+</body>
+
+</html>
